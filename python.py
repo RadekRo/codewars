@@ -57,7 +57,7 @@ def spin_words(sentence):
 # spin_words("CodeWars")
 # spin_words("Take me home to the place where I belong")
 # favourite solution:
-#  return " ".join([x[::-1] if len(x) >= 5 else x for x in sentence.split(" ")])
+# return " ".join([x[::-1] if len(x) >= 5 else x for x in sentence.split(" ")])
 
 # Challenge 4 - 8 kyu
 # Create a function that takes an integer as an argument 
@@ -68,3 +68,18 @@ def even_or_odd(number):
 
 # TESTS
 # print(even_or_odd(3))
+
+# Challenge 5 - 7 kyu
+# Write a function which takes a list of strings 
+# and returns each line prepended by the correct number.
+
+def number(lines):
+    for i in range(0, len(lines)):
+        lines[i] = f"{i + 1}: {lines[i]}"
+    return lines
+
+# TESTS
+# print(number(["a", "b", "c"]))
+# print(number([]))
+# favourite solution:
+# return [f"{counter}: {line}" for counter, line in enumerate(lines, start=1)]
