@@ -1,6 +1,7 @@
 # These are the solutions of the codewars.com challenges in Python language
 
 # Challenge 1 - 7 kyu
+
 # check if the provided number is a perfect square
 
 def is_square(n):  
@@ -17,6 +18,7 @@ def is_square(n):
 # print(is_square(7))
 
 # Challenge 2 - 7 kyu
+
 # find a sum of provided TWO numbers and ALL between them. Numbers given unorderer.
 
 def get_sum(a,b):
@@ -38,6 +40,7 @@ def get_sum(a,b):
 #   return sum(range(min(a, b), max(a, b) + 1))
 
 # Challenge 3 - 6 kyu (level up mode)
+
 # Write a function that takes in a string of one or more words, 
 # and returns the same string, but with all five or more letter words reversed
 
@@ -60,6 +63,7 @@ def spin_words(sentence):
 # return " ".join([x[::-1] if len(x) >= 5 else x for x in sentence.split(" ")])
 
 # Challenge 4 - 8 kyu
+
 # Create a function that takes an integer as an argument 
 # and returns "Even" for even numbers or "Odd" for odd numbers.
 
@@ -70,6 +74,7 @@ def even_or_odd(number):
 # print(even_or_odd(3))
 
 # Challenge 5 - 7 kyu
+
 # Write a function which takes a list of strings 
 # and returns each line prepended by the correct number.
 
@@ -83,3 +88,21 @@ def number(lines):
 # print(number([]))
 # favourite solution:
 # return [f"{counter}: {line}" for counter, line in enumerate(lines, start=1)]
+
+# Challenge 6 - 6 kyu (level up mode)
+
+# Return the sum of all the multiples of 3 or 5 below the number passed in. 
+# Additionally, if the number is negative, return 0 (for languages that do have them).
+# Note: If the number is a multiple of both 3 and 5, only count it once.
+
+def solution(number):
+    set_of_numbers = set()
+    for i in range(0, number):
+        if i%3 == 0 or i%5 == 0:
+            set_of_numbers.add(i)
+    print (sum(set_of_numbers))
+
+# TESTS
+# solution(20)
+# favourite solution:
+# return sum([x for x in range(number) if x % 3 == 0 or x % 5 == 0])
