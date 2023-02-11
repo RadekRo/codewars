@@ -106,3 +106,19 @@ def solution(number):
 # solution(20)
 # favourite solution:
 # return sum([x for x in range(number) if x % 3 == 0 or x % 5 == 0])
+
+# Challenge 7 - 6 kyu
+
+# The goal of this exercise is to convert a string to a new string where 
+# each character in the new string is "(" if that character appears only 
+# once in the original string, or ")" if that character appears more than once in the original string. 
+
+def duplicate_encode(word):
+    word = word.upper()
+    coded_word = []
+    for i in range(0, len(word)):
+        if word.count(word[i]) > 1:
+            coded_word.append(")")
+        else:
+            coded_word.append("(")
+    return "".join(coded_word) 
