@@ -30,10 +30,10 @@ def get_sum(a,b):
             arr_sum += i
         return arr_sum
 
-#TESTS
-#print(get_sum(2,2))
-#print(get_sum(-1,0))
-#print(get_sum(5,3))
+# TESTS
+# print(get_sum(2,2))
+# print(get_sum(-1,0))
+# print(get_sum(5,3))
 #   favourite solution:
 #   return sum(range(min(a, b), max(a, b) + 1))
 
@@ -51,8 +51,20 @@ def spin_words(sentence):
             result.append(word)
     print(" ".join(result))
 
-#TESTS   
-spin_words("Welcome")
-spin_words("cup")
-spin_words("CodeWars")
-spin_words("Take me home to the place where I belong")
+# TESTS   
+# spin_words("Welcome")
+# spin_words("cup")
+# spin_words("CodeWars")
+# spin_words("Take me home to the place where I belong")
+# favourite solution:
+#  return " ".join([x[::-1] if len(x) >= 5 else x for x in sentence.split(" ")])
+
+# Challenge 4 - 8 kyu
+# Create a function that takes an integer as an argument 
+# and returns "Even" for even numbers or "Odd" for odd numbers.
+
+def even_or_odd(number):
+    return "Even" if number % 2 == 0 else "Odd"
+
+# TESTS
+# print(even_or_odd(3))
