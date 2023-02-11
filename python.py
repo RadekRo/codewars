@@ -24,13 +24,35 @@ def get_sum(a,b):
         return a
     else:
         arr = [a, b]
-        sum = 0
+        arr_sum = 0
         arr.sort()
         for i in range(arr[0], arr[1]+1):
-            sum += i
-        return sum
-    
+            arr_sum += i
+        return arr_sum
+
 #TESTS
 #print(get_sum(2,2))
 #print(get_sum(-1,0))
 #print(get_sum(5,3))
+#   favourite solution:
+#   return sum(range(min(a, b), max(a, b) + 1))
+
+# Challenge 3 - 6 kyu (level up mode)
+# Write a function that takes in a string of one or more words, 
+# and returns the same string, but with all five or more letter words reversed
+
+def spin_words(sentence):
+    sentence_words = sentence.split(" ")
+    result = []
+    for word in sentence_words:
+        if len(word) >= 5:
+            result.append(word[::-1])
+        else:
+            result.append(word)
+    print(" ".join(result))
+
+#TESTS   
+spin_words("Welcome")
+spin_words("cup")
+spin_words("CodeWars")
+spin_words("Take me home to the place where I belong")
