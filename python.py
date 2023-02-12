@@ -182,3 +182,15 @@ def is_valid_walk(walk):
 # print(is_valid_walk(["n", "e"]))
 # favourite solution:
 # return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')
+
+# Challenge 10 - 6 kyu
+
+# Given an array of integers, find the one that appears an odd number of times.
+
+def find_it(seq):
+    for num in seq:
+        if seq.count(num)%2 != 0:
+            return num
+
+# favourite solution:
+# return [x for x in seq if seq.count(x) % 2][0]
