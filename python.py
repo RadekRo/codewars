@@ -194,3 +194,26 @@ def find_it(seq):
 
 # favourite solution:
 # return [x for x in seq if seq.count(x) % 2][0]
+
+# Challenge 11 - 8 kyu
+# Create a function with two arguments that will return an array of the first n multiples of x.
+
+def count_by(x, n):
+    numbers = []
+    for i in range(1, n + 1):
+        numbers.append(x * i)
+    return numbers
+
+# favourite solution:
+# return [i * x for i in range(1, n + 1)]
+
+# Challenge 12 - 8 kyu
+
+# In this simple assignment you are given a number and have to make it negative. 
+# But maybe the number is already negative?
+
+def make_negative( number ):
+    return number if number <= 0 else number - number * 2
+
+# favourite solution
+# return -abs(number)
