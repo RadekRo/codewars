@@ -219,6 +219,7 @@ def make_negative( number ):
 # return -abs(number)
 
 # Challenge 13 - 8 kyu
+
 # Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. 
 # If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
 # Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
@@ -230,6 +231,7 @@ def lovefunc(flower1, flower2):
 # return (flower1 + flower2)%2
 
 # Challenge 14 - 6 kyu
+
 # There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time 
 # required for all the customers to check out!
 # input
@@ -266,3 +268,31 @@ def queue_time(customers, n):
 #        l[l.index(min(l))]+=i
 #    return max(l)
 
+# Challenge 15 - 8 kyu
+
+# our function takes two arguments:
+# current father's age (years)
+# current age of his son (years)
+# Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). 
+# The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+
+def twice_as_old(dad_years_old, son_years_old):
+    years_ago_or_future = 0
+    if son_years_old == 0:
+        years_ago_or_future += 1
+        son_years_old += 1
+        dad_years_old += 1
+    if dad_years_old / son_years_old > 2:
+        while dad_years_old / son_years_old != 2:
+            dad_years_old += 1
+            son_years_old += 1
+            years_ago_or_future += 1
+    else:
+        while dad_years_old / son_years_old != 2:
+            dad_years_old -= 1
+            son_years_old -= 1
+            years_ago_or_future += 1
+    return years_ago_or_future
+
+# favourite solution:
+# return abs(dad_years_old - 2*son_years_old)
