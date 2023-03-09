@@ -226,8 +226,43 @@ def make_negative( number ):
 def lovefunc(flower1, flower2):
     return (flower1 + flower2)%2 != 0
 
-# TESTS
-# print(lovefunc(2,3))
-# print(lovefunc(2,2))
 # favourite solution:
 # return (flower1 + flower2)%2
+
+# Challenge 14 - 6 kyu
+# There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time 
+# required for all the customers to check out!
+# input
+# customers: an array of positive integers representing the queue. Each integer represents a customer, 
+# and its value is the amount of time they require to check out.
+# n: a positive integer, the number of checkout tills.
+# output
+# The function should return an integer, the total time required.
+
+def queue_time(customers, n):
+    if n == 1 or len(customers) == 0:
+        return sum(customers)
+    elif n >= len(customers):
+        return max(customers)
+    else:
+        tills = [0] * n
+        for i in range(len(tills)):
+            tills[i] = customers[0]
+            del customers[0]
+        time = 0
+        while len(customers) > 0:
+            for i in range(len(tills)):
+                tills[i] -= 1
+                if tills[i] == 0 and len(customers) > 0:
+                    tills[i] = customers[0]
+                    del customers[0]
+            time += 1
+        return max(tills) + time
+
+# favourite solution:
+# def queue_time(customers, n):
+#    l=[0]*n
+#    for i in customers:
+#        l[l.index(min(l))]+=i
+#    return max(l)
+
